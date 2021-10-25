@@ -2,8 +2,11 @@ import { Link, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Blog from "./components/Blog";
 import Panel from "./components/Panel";
-import PrivateRoute from "./privateRoute/PrivateRoute";
+import Dashboard from './components/Dashboard';
 import Login from "./components/Login";
+// private routes
+import PrivateRoute from "./privateRoute/PrivateRoute";
+import PrivateRoute2 from "./privateRoute/PrivateRoute2";
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
         </li>
         <li>
           <Link to="/panel">Panel</Link>
+        </li>
+        <li>
+          <Link to="/dashboard">Dashboard</Link>
         </li>
       </ul>
 
@@ -33,6 +39,7 @@ function App() {
           <Panel />
         </PrivateRoute>
 
+        <PrivateRoute2 path="/dashboard" component={Dashboard} />
 
         <Route path="/login">
           <Login />

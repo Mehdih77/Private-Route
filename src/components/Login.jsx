@@ -9,12 +9,12 @@ export default function Login() {
   const { signInWithEmailAndPassword, isAuthenticated, isPending } = useAuth();
 
   // from is saved in location state in "PrivateRoute"
-  // after || >>reason >>>>> for default path
+  // after || >>beacause >>>>> for default path
   const { from } = location.state || { from: { pathname: "/" } };
 
   useLayoutEffect(() => {
     if (isAuthenticated) {
-      history.replace(from); //! if user loged in,, dont show the login page &&& also using replace for cant back to the login page
+      history.replace(from); //! if user loged in,, dont show the login page when want to back that last page &&& also using replace for cant back to the login page
     }
   }, [from, history, isAuthenticated]);
 

@@ -8,7 +8,10 @@ export default function PrivateRoute({ children, ...rest }) {
 
   const location = useLocation();
 
+
   const { isAuthenticated } = useAuth();
+  
+
   return (
     <Route {...rest}>
 
